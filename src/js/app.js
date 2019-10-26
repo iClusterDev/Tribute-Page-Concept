@@ -1,3 +1,4 @@
-import HelloWorld from "./modules/HelloWorld";
+// import HelloWorld from "./modules/HelloWorld";
 
-const hello = new HelloWorld();
+// const hello = new HelloWorld();
+console.log("ok");
