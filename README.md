@@ -2,10 +2,10 @@
 
 ### Design Concept
 
-This project is part of the FCC challenges within the Responsive Web Design section.\
-
+This project is part of the FCC challenges within the Responsive Web Design section.
+\
 The tribute page is developed using Sass and VanillaJS. All the Sass code is compiled into CSS and the JavaScript is transpiled (browserify/babel) using Gulp4 as a build tool. All the images are compressed as well.\
-
+\
 The main feature of the project is the usage of CSS grid, allowing an asymmetric consistent design of the sections, where the section elements overlap on smaller screen sizes.
 
 ### Live Demo
