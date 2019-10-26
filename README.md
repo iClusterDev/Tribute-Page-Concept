@@ -10,7 +10,7 @@ The main feature of the project is the usage of CSS grid, allowing an asymmetric
 
 ### Live Demo
 
-A live demo of the project is available [here]()
+A live demo of the project is available [here](https://tribute-page-design.netlify.com)
 
 ## Contributing
 
