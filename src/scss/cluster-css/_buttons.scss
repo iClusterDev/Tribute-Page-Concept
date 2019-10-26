@@ -1,0 +1,40 @@
+.btn {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  // ---------------------------
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 2px;
+  background-color: rgba(51, 51, 51, 1);
+  text-transform: uppercase;
+  font-weight: 700;
+  // ---------------------------
+
+  &.fab {
+    border-radius: 50%;
+    position: absolute;
+    padding: 0;
+    margin: 1rem;
+    width: 48px;
+    height: 48px;
+    background-color: rgb(255, 255, 255);
+    color: rgba(51, 51, 51, 1);
+
+    i {
+      margin-top: 2px;
+    }
+
+    @include for-mobile-portrait-down {
+      margin: 1rem 0.5rem;
+    }
+  }
+
+  &.disabled {
+    color: rgba(51, 51, 51, 0.5);
+    box-shadow: none !important;
+    cursor: default !important;
+  }
+}

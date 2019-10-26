@@ -1,0 +1,13 @@
+.textbox {
+  padding: 4rem;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.75);
+
+  @include for-mobile-landscape-down {
+    padding: 4rem 2rem;
+  }
+
+  @include for-mobile-portrait-down {
+    padding: 1rem;
+  }
+}

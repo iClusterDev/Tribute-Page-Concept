@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,300,400,700,900");
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:700,900");
+@import "./breakpoints";
+
+// ----------------------------------------------
+// general setup
+// ----------------------------------------------
+html {
+  color: rgba(51, 51, 51, 1);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  line-height: 1.8;
+  font-size: 15px;
+
+  @include for-tablet-down {
+    font-size: 14px;
+  }
+}
+
+p {
+  margin-bottom: 1.25em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 2.75rem 0 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+h1,
+.display-1 {
+  margin-top: 0;
+}
+
+// ----------------------------------------------
+// to set typography on large screens
+// typescale: augmented fourth
+// ----------------------------------------------
+h1,
+.display-1 {
+  font-size: 5.653em;
+}
+
+h2,
+.display-2 {
+  font-size: 3.998em;
+}
+
+h3,
+.display-3 {
+  font-size: 2.827em;
+}
+
+h4,
+.display-4 {
+  font-size: 1.999em;
+}
+
+h5,
+.display-5 {
+  font-size: 1.414em;
+}
+
+small,
+.text-small,
+.display-6 {
+  font-size: 0.707em;
+}
+
+// ----------------------------------------------
+// to set typography on tablet screens
+// typescale: perfect fourth
+// ----------------------------------------------
+@include for-tablet-down {
+  h1,
+  .display-1 {
+    font-size: 4.209em;
+  }
+
+  h2,
+  .display-2 {
+    font-size: 3.157em;
+  }
+
+  h3,
+  .display-3 {
+    font-size: 2.369em;
+  }
+
+  h4,
+  .display-4 {
+    font-size: 1.777em;
+  }
+
+  h5,
+  .display-5 {
+    font-size: 1.333em;
+  }
+
+  small,
+  .text-small,
+  .display-6 {
+    font-size: 0.75em;
+  }
+}
+
+// ----------------------------------------------
+// to set typography on small screens
+// typescale: major third
+// ----------------------------------------------
+@include for-mobile-portrait-down {
+  h1,
+  .display-1 {
+    font-size: 3.052em;
+  }
+
+  h2,
+  .display-2 {
+    font-size: 2.441em;
+  }
+
+  h3,
+  .display-3 {
+    font-size: 1.953em;
+  }
+
+  h4,
+  .display-4 {
+    font-size: 1.563em;
+  }
+
+  h5,
+  .display-5 {
+    font-size: 1.25em;
+  }
+
+  small,
+  .text_small {
+    font-size: 0.8em;
+  }
+}
+
+// ----------------------------------------------
+// big headings
+// ----------------------------------------------
+.heading {
+  z-index: 1;
+  padding: 1rem 2rem;
+  margin: 0;
+
+  @include for-mobile-portrait-down {
+    padding: 1rem;
+  }
+
+  &.main-title {
+    line-height: 1;
+    font-size: 10rem;
+
+    @include for-normal-laptop-down {
+      font-size: 7em;
+    }
+
+    @include for-tablet-down {
+      font-size: 6em;
+    }
+
+    @include for-mobile-landscape-down {
+      font-size: 5em;
+    }
+
+    @include for-mobile-portrait-down {
+      font-size: 4em;
+    }
+  }
+}
+
+// ----------------------------------------------
+// typography helpers
+// ----------------------------------------------
+.secondary-font {
+  font-family: "Playfair Display", serif;
+}
+
+.text-thin {
+  font-weight: 100;
+}
+
+.text-light {
+  font-weight: 300;
+}
+
+.text-regular {
+  font-weight: 400;
+}
+
+.text-medium {
+  font-weight: 700;
+}
+
+.text-bold {
+  font-weight: 900;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.line {
+  $line-width: 100px;
+  $line-height: 2px;
+  $line-distance: 1rem;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    content: "";
+    display: none;
+    margin: 0 $line-distance;
+    width: $line-width;
+    height: $line-height;
+    background-color: rgba(51, 51, 51, 1);
+  }
+
+  &.line-left {
+    &::before {
+      display: block;
+      order: 0;
+    }
+  }
+
+  &.line-right {
+    &::before {
+      display: block;
+      order: 1;
+    }
+  }
+}
+
+.text-vertical {
+  display: inline-block;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+
+  &.line {
+    $line-width: 2px;
+    $line-height: 100px;
+    $line-distance: 1rem;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: "";
+      margin: $line-distance 0;
+      width: $line-width;
+      height: $line-height;
+    }
+  }
+}

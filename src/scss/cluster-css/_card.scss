@@ -1,0 +1,43 @@
+@import "./breakpoints";
+
+// ----------------------------------------------
+// card
+//  card-text
+//  card-actions
+// ----------------------------------------------
+.card {
+  display: block;
+  width: 100%;
+  padding: 3rem;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 1);
+
+  &.transparent-1 {
+    background-color: rgba(255, 255, 255, 0.75);
+  }
+
+  &.transparent-2 {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  &.transparent-3 {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+
+  &.transparent-4 {
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+  .card-text,
+  .card-actions {
+    padding: 0.5rem 0;
+  }
+
+  @include for-mobile-landscape-down {
+    padding: 1rem;
+  }
+}
+
+.push-right {
+  margin-left: auto;
+}

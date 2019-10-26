@@ -1,0 +1,29 @@
+@mixin for-mobile-portrait-down {
+  @media screen and (max-width: 425px) {
+    @content;
+  }
+}
+
+@mixin for-mobile-landscape-down {
+  @media screen and (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-down {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin for-normal-laptop-down {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin for-large-laptop_down {
+  @media screen and (max-width: 1440px) {
+    @content;
+  }
+}

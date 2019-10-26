@@ -1,7 +1,537 @@
-@import "./partials/variables";
+@import "./cluster-css/breakpoints";
+@import "./cluster-css/flex";
+@import "./cluster-css/common";
+@import "./cluster-css/typography";
+@import "./cluster-css/buttons";
+@import "./cluster-css/lists";
+@import "./cluster-css/animations";
+@import "./cluster-css/textbox";
+@import "./cluster-css/components/slider";
 
 body {
-  background: $bg;
-  color: $color;
-  padding: 2rem;
+  background: url(../img/background-min.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+main {
+  margin-top: 80px;
+
+  @include for-tablet-down {
+    margin-top: 64px;
+  }
+
+  @include for-mobile-portrait-down {
+    margin-top: 0;
+  }
+}
+
+section {
+  padding: 4rem 0;
+  margin: 2rem 0 4rem;
+
+  @include for-mobile-landscape-down {
+    padding: 0 0 2rem;
+    margin: 0 0 2rem;
+  }
+}
+
+.icon {
+  width: 32px;
+}
+
+.number {
+  padding: 0 2rem;
+  font-size: 11.089em;
+  line-height: 1;
+  z-index: 1;
+  &::before {
+    content: ".";
+  }
+
+  @include for-large-laptop_down {
+    font-size: 9.089em;
+  }
+
+  @include for-normal-laptop-down {
+    font-size: 6.854em;
+  }
+
+  @include for-mobile-landscape-down {
+    padding: 0 1rem;
+    font-size: 2.618em;
+  }
+}
+
+.image {
+  border-radius: 2px;
+  position: relative;
+  z-index: -1;
+
+  &::after {
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: transparent;
+  }
+
+  &.cyan {
+    &::after {
+      background-color: rgba(0, 255, 255, 0.35);
+    }
+  }
+
+  &.pink {
+    &::after {
+      background-color: rgba(255, 0, 255, 0.35);
+    }
+  }
+
+  &.yellow {
+    &::after {
+      background-color: rgba(255, 255, 0, 0.35);
+    }
+  }
+
+  .background-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.action {
+  padding: 1rem;
+}
+
+// ------------------------------------
+// nav menu
+// ------------------------------------
+#menu-dialog {
+  position: absolute;
+  top: 64px;
+  left: 80px;
+  width: 200px;
+  transform: scale(0);
+  transform-origin: top left;
+
+  @include for-mobile-portrait-down {
+    left: 72px;
+  }
+
+  &.open {
+    animation-name: scale-forward;
+    animation-duration: 0.25s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  &.close {
+    animation-name: scale-reverse;
+    animation-duration: 0.25s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+}
+
+// ------------------------------------
+// hero section
+// ------------------------------------
+#hero {
+  display: grid;
+  grid-template-rows: 4rem repeat(6, minmax(4rem, 100px)) 4rem;
+  grid-template-columns: 4rem repeat(6, minmax(4rem, 1fr)) 4rem;
+
+  a {
+    color: rgba(51, 51, 51, 1);
+  }
+
+  .textbox {
+    text-align: right;
+    grid-area: 4/1/9/5;
+
+    p {
+      margin-top: 1rem;
+    }
+  }
+
+  .heading {
+    align-self: center;
+    grid-area: 3/2/5/9;
+  }
+
+  .image {
+    grid-area: 1/5/8/9;
+    position: relative;
+
+    #image {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    #img-caption {
+      display: none;
+    }
+  }
+
+  .action {
+    grid-area: 8/5/9/9;
+  }
+
+  @include for-normal-laptop-down {
+    grid-template-rows: 4rem repeat(6, minmax(4rem, 80px)) 4rem;
+
+    .textbox {
+      grid-area: 4/1/9/6;
+    }
+
+    .image {
+      grid-area: 1/4/8/9;
+    }
+
+    .action {
+      grid-area: 8/6/9/9;
+    }
+  }
+
+  @include for-tablet-down {
+    .image {
+      grid-area: 2/4/8/9;
+    }
+  }
+
+  @include for-mobile-landscape-down {
+    grid-template-rows: 200px 1fr 4rem;
+    grid-template-columns: 4rem 1fr 4rem;
+
+    .textbox {
+      text-align: left;
+      grid-area: 2/1/3/3;
+    }
+
+    .image {
+      grid-area: 1/2/4/4;
+    }
+
+    .heading {
+      align-self: end;
+      grid-area: 1/2/2/4;
+    }
+
+    .action {
+      grid-area: 3/2/4/4;
+    }
+  }
+
+  @include for-mobile-portrait-down {
+    .textbox {
+      grid-area: 2/1/3/4;
+      padding: 2rem 1rem;
+    }
+
+    .image {
+      grid-area: 1/1/2/4;
+    }
+
+    .heading {
+      grid-area: 1/1/2/4;
+    }
+
+    .action {
+      grid-area: 3/1/4/4;
+      background-color: rgba(255, 255, 255, 0.9);
+      width: 100%;
+    }
+  }
+}
+
+// ------------------------------------
+// biography section
+// ------------------------------------
+#biography {
+  display: grid;
+  grid-template-rows: 4rem repeat(6, minmax(4rem, 100px)) 4rem;
+  grid-template-columns: 4rem repeat(6, minmax(4rem, 1fr)) 4rem;
+
+  a {
+    color: rgba(51, 51, 51, 1);
+  }
+
+  .textbox {
+    grid-area: 2/5/9/9;
+
+    h3 {
+      margin-top: 1rem;
+    }
+  }
+
+  .number {
+    padding: 0;
+    align-self: center;
+    justify-self: center;
+    grid-area: 1/7/3/9;
+  }
+
+  .image {
+    grid-area: 3/1/8/5;
+
+    #bio-image-1 {
+      background-image: url(../img/bio1_square_gs_60-min.jpg);
+    }
+    #bio-image-2 {
+      background-image: url(../img/bio2_square_gs_60-min.jpg);
+    }
+    #bio-image-3 {
+      background-image: url(../img/bio3_square_gs_60-min.jpg);
+    }
+    #bio-image-4 {
+      background-image: url(../img/bio4_square_gs_60-min.jpg);
+    }
+    #bio-image-5 {
+      background-image: url(../img/bio5_square_gs_60-min.jpg);
+    }
+    #bio-image-6 {
+      background-image: url(../img/bio6_square_gs_60-min.jpg);
+    }
+    #bio-image-7 {
+      background-image: url(../img/bio7_square_gs_60-min.jpg);
+    }
+  }
+
+  .heading {
+    grid-area: 2/4/4/6;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .caption {
+    padding: 1rem;
+    justify-self: end;
+    grid-area: 4/4/8/5;
+  }
+
+  @include for-normal-laptop-down {
+    grid-template-rows: 4rem repeat(6, minmax(4rem, 80px)) 4rem;
+
+    .image {
+      grid-area: 3/1/8/6;
+    }
+
+    .textbox {
+      grid-area: 2/4/9/9;
+    }
+
+    .caption {
+      display: none;
+    }
+
+    .heading {
+      grid-area: 2/3/4/6;
+    }
+  }
+
+  @include for-mobile-landscape-down {
+    grid-template-rows: 200px 300px 4rem;
+    grid-template-columns: 4rem 1fr 4rem;
+
+    .number {
+      display: none;
+    }
+
+    .textbox {
+      grid-area: 2/2/3/4;
+    }
+
+    .image {
+      grid-area: 1/1/4/3;
+    }
+
+    .heading {
+      grid-area: 1/1/2/3;
+      justify-self: end;
+      align-self: end;
+    }
+  }
+
+  @include for-mobile-portrait-down {
+    grid-template-rows: 200px 300px;
+    .image {
+      grid-area: 1/1/2/4;
+    }
+
+    .textbox {
+      grid-area: 2/1/3/4;
+
+      .slide {
+        justify-content: center;
+      }
+    }
+
+    .heading {
+      grid-area: 1/1/2/4;
+      justify-self: start;
+    }
+  }
+}
+
+// ------------------------------------
+// music section
+// ------------------------------------
+#music {
+  display: grid;
+  grid-template-rows: 4rem repeat(6, minmax(4rem, 100px)) 4rem;
+  grid-template-columns: 4rem repeat(6, minmax(4rem, 1fr)) 4rem;
+
+  a {
+    color: rgba(51, 51, 51, 1);
+  }
+
+  .textbox {
+    grid-area: 2/1/8/5;
+    text-align: right;
+
+    h3 {
+      margin-top: 1rem;
+    }
+  }
+
+  .number {
+    padding: 0;
+    align-self: center;
+    justify-self: center;
+    grid-area: 1/1/3/3;
+  }
+
+  .image {
+    grid-area: 3/5/9/9;
+
+    #music-image-1 {
+      background-image: url(../img/music_square_gs_60-min.jpg);
+    }
+  }
+
+  .heading {
+    align-self: center;
+    justify-self: center;
+    grid-area: 2/4/4/6;
+  }
+
+  .caption {
+    padding: 1rem;
+    justify-self: start;
+    grid-area: 4/5/8/6;
+  }
+
+  .action {
+    justify-self: end;
+    grid-area: 8/2/9/5;
+  }
+
+  @include for-normal-laptop-down {
+    grid-template-rows: 4rem repeat(6, minmax(4rem, 80px)) 4rem;
+
+    .image {
+      grid-area: 3/4/9/9;
+    }
+
+    .textbox {
+      grid-area: 2/1/8/6;
+    }
+
+    .action {
+      grid-area: 8/1/9/4;
+    }
+
+    .caption {
+      display: none;
+    }
+
+    .heading {
+      grid-area: 2/5/4/7;
+    }
+  }
+
+  @include for-mobile-landscape-down {
+    grid-template-rows: 200px 1fr 4rem;
+    grid-template-columns: 4rem 1fr 4rem;
+
+    .number {
+      display: none;
+    }
+
+    .textbox {
+      grid-area: 2/1/3/3;
+    }
+
+    .image {
+      grid-area: 1/2/4/4;
+    }
+
+    .action {
+      grid-area: 3/2/4/4;
+      justify-self: start;
+    }
+
+    .heading {
+      grid-area: 1/2/2/4;
+      justify-self: start;
+      align-self: end;
+    }
+  }
+
+  @include for-mobile-portrait-down {
+    .image {
+      grid-area: 1/1/2/4;
+    }
+
+    .textbox {
+      grid-area: 2/1/3/4;
+      text-align: left;
+      padding: 2rem 1rem;
+    }
+
+    .heading {
+      grid-area: 1/1/2/4;
+    }
+
+    .action {
+      grid-area: 3/1/4/4;
+      background-color: rgba(255, 255, 255, 0.9);
+      width: 100%;
+    }
+  }
+}
+
+// ------------------------------------
+// footer
+// ------------------------------------
+#footer {
+  min-height: 160px;
+  opacity: 0.5;
+
+  .copy {
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+
+  .social-icons {
+    display: flex;
+
+    .social-icons-item {
+      margin: 0 0.5rem;
+    }
+  }
+
+  @include for-mobile-portrait-down {
+    min-height: 120px;
+  }
 }

@@ -1,0 +1,29 @@
+.list {
+  border-radius: 2px;
+
+  li {
+    display: block;
+    border-bottom: solid 1px rgba(51, 51, 51, 0.25);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    * {
+      display: block;
+      padding: 1rem 2rem;
+    }
+  }
+
+  &.hoverable {
+    li {
+      cursor: pointer;
+      background-color: white;
+      transition: background-color 0.25s;
+
+      &:hover {
+        background-color: whitesmoke;
+      }
+    }
+  }
+}
