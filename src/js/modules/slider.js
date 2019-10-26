@@ -102,3 +102,5 @@ const VerticalSlider = Object.create(Slider);
 VerticalSlider.initialize = function(sliderElement, nextBtn, prevBtn) {
   this.init(sliderElement, nextBtn, prevBtn, "top");
 };
+
+export { HorizontalSlider, VerticalSlider };
