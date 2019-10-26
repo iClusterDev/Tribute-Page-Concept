@@ -2,7 +2,7 @@
 
 ### Design Concept
 
-This project is part of FCC challenges within the Responsive Web Design section. Here the tribute page is developed using Sass and VanillaJS. All the Sass code is compiled into CSS and the JavaScript is transpiled (browserify/babel) using Gulp4 as a build tool. All the images are compressed as well.
+This project is part of the FCC challenges within the Responsive Web Design section. Here the tribute page is developed using Sass and VanillaJS. All the Sass code is compiled into CSS and the JavaScript is transpiled (browserify/babel) using Gulp4 as a build tool. All the images are compressed as well.
 
 ### Live Demo
 
