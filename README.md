@@ -1,32 +1,12 @@
 # Tribute Page Design Concept
 
-<!-- A Sass project boilerplate, using Gulp4 and BrowserSync. Ideal for building static webpages.
+### Design Concept
 
-### Prerequisites
+This project is part of FCC challenges within the Responsive Web Design section. Here the tribute page is developed using Sass and VanillaJS. All the Sass code is compiled into CSS and the JavaScript is transpiled (browserify/babel) using Gulp4 as a build tool. All the images are compressed as well.
 
-To use Devkit-Static you need to have [Node.js](https://nodejs.org/en/) installed.
+### Live Demo
 
-### Installing
-
-Download the .zip file and extract the content into your working directory.
-
-Now run:
-
-```
-npm install
-```
-
-After all the packages are installed run:
-
-```
-npm start
-```
-
-In your working directory a dist directory will be automatically generated. All your work should be done in the src directory. On every file save in the src directory, *.scss will get compiled into style.min.css, *js into app.min.js. All the images get transferred automatically into the dist directory.
-The dist forder is constantly whatched. Don't touch it!
-
-You are now all set.
-Happy Dev!
+A live demo of the project is available [here]()
 
 ## Contributing
 
@@ -38,4 +18,4 @@ If you find any issues, feel free to submit a pull request.
 
 ## License
 
-This project is licensed under the MIT License. -->
+This project is licensed under the MIT License.
