@@ -8,8 +8,13 @@
 @import "./cluster-css/textbox";
 @import "./cluster-css/components/slider";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: url(../img/background-min.jpg);
+  // background: url(../img/background-min.jpg);
+  background-color: whitesmoke;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
