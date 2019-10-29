@@ -99,4 +99,5 @@ const watch = () => {
   gulp.watch(`./dist/**/*.html`).on("change", browserSync.reload);
 };
 
+exports.build = gulp.parallel(css, js, img, html);
 exports.default = gulp.series(gulp.parallel(css, js, img, html), watch);
