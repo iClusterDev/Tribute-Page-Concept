@@ -13,7 +13,6 @@ html {
 }
 
 body {
-  // background: url(../img/background-min.jpg);
   background-color: whitesmoke;
   background-attachment: fixed;
   background-position: center;
@@ -215,7 +214,7 @@ section {
   }
 
   @include for-mobile-landscape-down {
-    grid-template-rows: 200px 1fr 4rem;
+    grid-template-rows: 250px 1fr 4rem;
     grid-template-columns: 4rem 1fr 4rem;
 
     .textbox {
@@ -368,7 +367,7 @@ section {
   }
 
   @include for-mobile-portrait-down {
-    grid-template-rows: 200px 300px;
+    grid-template-rows: 250px 300px;
     .image {
       grid-area: 1/1/2/4;
     }
@@ -466,7 +465,7 @@ section {
   }
 
   @include for-mobile-landscape-down {
-    grid-template-rows: 200px 1fr 4rem;
+    grid-template-rows: 200px 300px 4rem;
     grid-template-columns: 4rem 1fr 4rem;
 
     .number {
@@ -494,6 +493,8 @@ section {
   }
 
   @include for-mobile-portrait-down {
+    grid-template-rows: 250px 300px;
+
     .image {
       grid-area: 1/1/2/4;
     }
